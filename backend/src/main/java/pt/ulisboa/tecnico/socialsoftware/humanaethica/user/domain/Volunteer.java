@@ -25,4 +25,8 @@ public class Volunteer extends User {
     public Volunteer(String name, State state) {
         super(name, Role.VOLUNTEER, state);
     }
+
+    public void addEnrollment(Enrollment enrollment) {
+        this.enrollments.add(enrollment);
+    }
 }
