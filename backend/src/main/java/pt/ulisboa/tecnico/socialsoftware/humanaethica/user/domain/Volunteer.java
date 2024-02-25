@@ -26,6 +26,15 @@ public class Volunteer extends User {
         super(name, Role.VOLUNTEER, state);
     }
 
+
+    public List<Enrollment> getEnrollments() {
+        return enrollments;
+    }
+
+    public void setEnrollments(List<Enrollment> enrollments) {
+        this.enrollments = enrollments;
+    }
+
     public void addEnrollment(Enrollment enrollment) {
         this.enrollments.add(enrollment);
     }
