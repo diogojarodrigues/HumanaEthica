@@ -32,16 +32,7 @@ class CreateEnrollmentMethodTest extends SpockTest {
         enrollmentDto.enrollmentDate = DateHandler.toISOString(NOW)
     }
 
-    def "create enrollment with success"() {
-
-        when:
-        def result = new Enrollment(enrollmentDto, volunteer, activity)
-
-        then: "check result"
-        result.getActivity() == activity
-    }
-
-   /* @Unroll
+    @Unroll
     def "create enrollment and violate invariant motivation: motivation=#motivation"() {
         given:
         enrollmentDto.motivation = motivation
@@ -59,6 +50,9 @@ class CreateEnrollmentMethodTest extends SpockTest {
         ENROLLMENT_MOTIVATION_01 || ErrorMessage.MOTIVATION_IS_EMPTY
         ENROLLMENT_MOTIVATION_09 || ErrorMessage.MOTIVATION_TOO_SHORT
     }
-*/
+
+  @TestConfiguration
+    static class LocalBeanConfiguration extends BeanConfiguration {}      
+
 }
  
